@@ -55,7 +55,9 @@ public class FieldSpec extends Spec
     @Override
     public boolean matches(Member m)
     {
-        return m instanceof Field && name.equals(((Field) m).getName());
+        return m instanceof Field
+            && name.equals(((Field) m).getName())
+            && returnType.equals(((Field) m).getType().getName());
     }
 
 }
